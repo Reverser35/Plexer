@@ -105,6 +105,14 @@
         keyString = @"clear";
     else if (keyCode == kVK_Space)
         keyString = @"space";
+    else if (keyCode == kVK_LeftArrow)
+        keyString = @"←";
+    else if (keyCode == kVK_RightArrow)
+        keyString = @"→";
+    else if (keyCode == kVK_UpArrow)
+        keyString = @"↑";
+    else if (keyCode == kVK_DownArrow)
+        keyString = @"↓";
     else {
         UInt32 deadKeyState = 0;
         UniCharCount actualCount = 0;
