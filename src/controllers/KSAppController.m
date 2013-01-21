@@ -277,7 +277,7 @@ pid_t currentPID = -1;
 // ------------------------------------------------------
 
 -(void)registerEventTaps {
-    keyEventTapRef = CGEventTapCreate(kCGSessionEventTap, kCGHeadInsertEventTap, kCGEventTapOptionListenOnly, CGEventMaskBit(kCGEventKeyDown) | CGEventMaskBit(kCGEventKeyUp) | CGEventMaskBit(kCGEventFlagsChanged), KeyEventTapCallback, self);
+    keyEventTapRef = CGEventTapCreate(kCGSessionEventTap, kCGHeadInsertEventTap, kCGEventTapOptionListenOnly, kCGEventMaskForAllEvents, KeyEventTapCallback, self);
     
     if (keyEventTapRef == NULL) {
         NSLog(@"There was an error creating the event tap.");
@@ -315,7 +315,7 @@ CGEventRef KeyEventTapCallback(CGEventTapProxy proxy, CGEventType type, CGEventR
     
     CGKeyCode keyCode = (CGKeyCode)CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode);
     CGEventFlags flags = CGEventGetFlags(event);
-
+    
     if (type == kCGEventKeyDown) {
         if (keyCode == [[controller userSettings] toggleBroadcastingKeyCode]) {
             controller.broadcasting = !controller.broadcasting;
@@ -330,13 +330,77 @@ CGEventRef KeyEventTapCallback(CGEventTapProxy proxy, CGEventType type, CGEventR
     // If we're not broadcasting, then bomb out.
     if ([controller isBroadcasting] == NO)
         return event;
-    
+
     // We only broadcast keys if one of our apps is focused. Otherwise we'd get silly things like
     // keys being sent to the game when we are typing in skype, for example.
     // This is denoted by the currentPID being equal to -1; this is set in the app handler.
-    NSLog(@"currentPID = %d", currentPID);
+    
+    //NSLog(@"currentPID = %d", currentPID);
     if (currentPID == -1)
         return event;
+    
+    //Mirrors mouse moves
+    if (type == kCGEventMouseMoved) {
+        for (NSApplication* app in [controller applications]) {
+            pid_t pid = [[app valueForKey:@"NSApplicationProcessIdentifier"] intValue];
+            ProcessSerialNumber psn;
+            GetProcessForPID(pid, &psn);
+            
+            if (currentPID != pid) {
+                CGEventPostToPSN(&psn, event);
+            }
+        }
+        return event;
+    }
+    
+    //Mirrors mouse up, mouse down, and mouse drag
+    //Currently too slow so mouse clicks and drags sometimes lag
+    if (type == kCGEventLeftMouseDown || type == kCGEventLeftMouseUp || type == kCGEventLeftMouseDragged ||
+        type == kCGEventRightMouseDown || type == kCGEventRightMouseUp || type == kCGEventRightMouseDragged) {
+        
+        for (NSApplication* app in [controller applications]) {
+            pid_t pid = [[app valueForKey:@"NSApplicationProcessIdentifier"] intValue];
+            ProcessSerialNumber psn;
+            GetProcessForPID(pid, &psn);
+            
+            if (currentPID != pid) {
+                CFArrayRef allWindowIDs = CGWindowListCreate(kCGWindowListOptionOnScreenOnly, kCGNullWindowID);
+                if (allWindowIDs)
+                {
+                    CFMutableArrayRef windowIDs = CFArrayCreateMutable(NULL, 0, NULL);
+                    CFArrayRef windowDescs = CGWindowListCreateDescriptionFromArray(allWindowIDs);
+                    for (CFIndex idx=0; idx < CFArrayGetCount(windowDescs); idx++)
+                    {
+                        CFDictionaryRef dict = CFArrayGetValueAtIndex(windowDescs, idx);
+                        CFStringRef windowPID = CFDictionaryGetValue(dict, kCGWindowOwnerPID);
+                        NSString *curWindPID = (NSString *)windowPID;
+                        
+                        if ([curWindPID intValue] == pid) {
+                            CFStringRef windowNum = CFDictionaryGetValue(dict, kCGWindowNumber);
+                            
+                            NSEvent *oldEvent = [NSEvent eventWithCGEvent:event];
+                            NSEvent *customEvent = [NSEvent mouseEventWithType: [oldEvent type]
+                                                                      location: [NSEvent mouseLocation]
+                                                                 modifierFlags: [oldEvent modifierFlags] | NSCommandKeyMask
+                                                                     timestamp: [oldEvent timestamp]
+                                                                  windowNumber: [(NSString *)windowNum intValue]
+                                                                       context: nil
+                                                                   eventNumber: 0
+                                                                    clickCount: 1
+                                                                      pressure: 0];
+                            CGEventRef ev = [customEvent CGEvent];
+                            CGEventPostToPSN(&psn, ev);
+                            break;
+                        }
+                    }
+                    CFRelease(windowDescs);
+                    CFRelease(allWindowIDs);
+                    CFRelease(windowIDs);
+                }
+            }
+        }
+        return event;
+    }
     
     // NOTE: Is this too slow? May need to optimize this section of code.
     KSConfiguration* config = [[[controller userSettings] configurations] valueForKey:[[[controller configurationsController] configurationsPopUp] titleOfSelectedItem]];
@@ -363,12 +427,12 @@ CGEventRef KeyEventTapCallback(CGEventTapProxy proxy, CGEventType type, CGEventR
         pid_t pid = [[app valueForKey:@"NSApplicationProcessIdentifier"] intValue];
         ProcessSerialNumber psn;
         GetProcessForPID(pid, &psn);
-
+        
         if (currentPID != pid) {
             CGEventPostToPSN(&psn, event);
         }
     }
-        
+    
     return event;
 }
 
@@ -407,8 +471,8 @@ static OSStatus AddApplicationEventHandler(EventHandlerCallRef inRef, EventRef i
     }
     
     [controller setApplications:apps];
-    NSLog(@"There are now %d apps being watched.", [apps count]);
-    NSLog(@"The applications are %@", apps);
+    //NSLog(@"There are now %ld apps being watched.", [apps count]);
+    //NSLog(@"The applications are %@", apps);
 
 	[apps release];
     return noErr;
