@@ -251,7 +251,7 @@ NSString* FirstLaunch = @"FirstLaunch";
     
     [self serialize];
     
-    NSLog(@"Black list key code '%d' was added.", keyCode);    
+    //NSLog(@"Black list key code '%d' was added.", keyCode);
 }
 
 -(void)removeBlackListKeyAtIndex:(NSInteger)idx forConfiguration:(NSString*)name {

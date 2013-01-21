@@ -329,10 +329,10 @@ CGEventRef ConfigKeyEventTapCallback(CGEventTapProxy proxy, CGEventType type, CG
     CGKeyCode keyCode = (CGKeyCode)CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode);
     
     if (type == kCGEventKeyUp) {
-        NSLog(@"The %d key was released.", keyCode);
+        //NSLog(@"The %d key was released.", keyCode);
     }
     else if (type == kCGEventKeyDown) {
-        NSLog(@"The %d key was pressed.", keyCode);
+        //NSLog(@"The %d key was pressed.", keyCode);
         CGEventFlags flags = CGEventGetFlags(event);
 
         [[controller userSettings] addBlackListKey:keyCode withModifiers:flags forConfiguration:[[controller configurationsPopUp] titleOfSelectedItem]];

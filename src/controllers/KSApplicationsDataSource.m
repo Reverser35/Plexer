@@ -33,7 +33,7 @@
     if ([[aTableColumn identifier] isEqualToString:@"position"] == YES)
         return [NSString stringWithFormat:@"%d", (rowIndex + 1)];
     else if ([[aTableColumn identifier] isEqualToString:@"title"] == YES) {
-        NSLog(@"Returning friendly name for '@'", [applications objectAtIndex:rowIndex]);
+        //NSLog(@"Returning friendly name for '@'", [applications objectAtIndex:rowIndex]);
         NSString* str = [[applications objectAtIndex:rowIndex] stringByDeletingPathExtension];            
         return  [[str pathComponents] lastObject];
     }
