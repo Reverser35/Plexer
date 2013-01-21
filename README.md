@@ -1,5 +1,9 @@
 Added mouse broadcasting to Plexer, the best key broadcasting software available for mac. Hopefully with reliable mouse broadcasting it will become a complete multi-boxing solution for Mac OS X. Original copyright info is retained below.
 
+
+
+
+
 Copyright (c) 2012, David Owens II, Kiad Software, LLC All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
