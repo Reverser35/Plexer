@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -21,7 +21,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		7D1425110FFB504D00708F8B /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1425100FFB504D00708F8B /* BWToolkitFramework.framework */; };
 		7D1425640FFB535000708F8B /* release-notes.html in Resources */ = {isa = PBXBuildFile; fileRef = 7D1425630FFB535000708F8B /* release-notes.html */; };
 		7D1D582C0FDFA0CD00EB29CD /* Plexer_OFF.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1D582A0FDFA0CD00EB29CD /* Plexer_OFF.png */; };
 		7D1D582D0FDFA0CD00EB29CD /* Plexer_ON.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1D582B0FDFA0CD00EB29CD /* Plexer_ON.png */; };
@@ -34,15 +33,10 @@
 		7D4AA93F1010783E008D33C1 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7D4AA93E1010783E008D33C1 /* icon.icns */; };
 		7D5DEBB30FF9EB60005AB679 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D5DEBB10FF9EB60005AB679 /* MainMenu.xib */; };
 		7D7B312F100479ED00AF62EF /* KSApplicationsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7B312E100479ED00AF62EF /* KSApplicationsDataSource.m */; };
-		7D7EB7E91054465C00EA517C /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1425100FFB504D00708F8B /* BWToolkitFramework.framework */; };
-		7D7EB7EC1054466D00EA517C /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D1425100FFB504D00708F8B /* BWToolkitFramework.framework */; };
 		7D7F9D1810119FEF0059D5DA /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7F9D1710119FEF0059D5DA /* IOKit.framework */; };
 		7D8D2FCA0FEDFD3200912722 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D8D2FC90FEDFD3200912722 /* ScriptingBridge.framework */; };
 		7D8D300D0FEE045300912722 /* System Events.app in Resources */ = {isa = PBXBuildFile; fileRef = 7D8D300C0FEE045300912722 /* System Events.app */; };
-		7D8D321F0FEF48D900912722 /* version.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7D8D321E0FEF48D900912722 /* version.xcconfig */; };
 		7D8D32A90FEF54A000912722 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 7D8D32A80FEF54A000912722 /* dsa_pub.pem */; };
-		7D8D33570FEF77A800912722 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D8D33560FEF77A800912722 /* Sparkle.framework */; };
-		7D8D33C90FEF8C2B00912722 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D8D33560FEF77A800912722 /* Sparkle.framework */; };
 		7D91321B10032F3700F24C41 /* KSInfoPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D91321A10032F3700F24C41 /* KSInfoPanelController.m */; };
 		7D913F6110158208009E1320 /* KSRegistrationInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D913F6010158208009E1320 /* KSRegistrationInfoController.m */; };
 		7D913FC0101589A9009E1320 /* KSRegistration.c in Sources */ = {isa = PBXBuildFile; fileRef = 7D913FBF101589A9009E1320 /* KSRegistration.c */; };
@@ -52,6 +46,10 @@
 		7DA6EBB00FF626E60028CA3B /* KSConfigurationSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6EBAF0FF626E60028CA3B /* KSConfigurationSettingsController.m */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		983AAA6616A0B92100ADC2FF /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 983AAA6416A0B92100ADC2FF /* Sparkle.framework */; };
+		983AAA6816A0B99100ADC2FF /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 983AAA6416A0B92100ADC2FF /* Sparkle.framework */; };
+		98542E8216A0DF4900144403 /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98542E8116A0DF4900144403 /* BWToolkitFramework.framework */; };
+		98542E8316A0DF5200144403 /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 98542E8116A0DF4900144403 /* BWToolkitFramework.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -75,8 +73,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7D7EB7EC1054466D00EA517C /* BWToolkitFramework.framework in CopyFiles */,
-				7D8D33570FEF77A800912722 /* Sparkle.framework in CopyFiles */,
+				983AAA6816A0B99100ADC2FF /* Sparkle.framework in CopyFiles */,
+				98542E8316A0DF5200144403 /* BWToolkitFramework.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +87,6 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		7D1425100FFB504D00708F8B /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWToolkitFramework.framework; path = "../../Library/Application Support/Developer/Shared/Xcode/Frameworks/BWToolkitFramework.framework"; sourceTree = SOURCE_ROOT; };
 		7D1425630FFB535000708F8B /* release-notes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "release-notes.html"; sourceTree = "<group>"; };
 		7D1D582A0FDFA0CD00EB29CD /* Plexer_OFF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Plexer_OFF.png; sourceTree = "<group>"; };
 		7D1D582B0FDFA0CD00EB29CD /* Plexer_ON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Plexer_ON.png; sourceTree = "<group>"; };
@@ -114,7 +111,6 @@
 		7D8D300C0FEE045300912722 /* System Events.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = "System Events.app"; path = "/System/Library/CoreServices/System Events.app"; sourceTree = "<absolute>"; };
 		7D8D321E0FEF48D900912722 /* version.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = version.xcconfig; sourceTree = "<group>"; };
 		7D8D32A80FEF54A000912722 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
-		7D8D33560FEF77A800912722 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "/Users/owensd/Library/Application Support/Developer/Shared/Xcode/Frameworks/Sparkle.framework"; sourceTree = "<absolute>"; };
 		7D8D33C60FEF8B3E00912722 /* plexercast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = plexercast.xml; sourceTree = "<group>"; };
 		7D90C6CE0FF2087E0042969C /* Plexer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plexer_Prefix.pch; sourceTree = "<group>"; };
 		7D91321910032F3700F24C41 /* KSInfoPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSInfoPanelController.h; sourceTree = "<group>"; };
@@ -131,6 +127,8 @@
 		7DA6EBAF0FF626E60028CA3B /* KSConfigurationSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSConfigurationSettingsController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Plexer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plexer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		983AAA6416A0B92100ADC2FF /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		98542E8116A0DF4900144403 /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BWToolkitFramework.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,14 +136,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D8D33C90FEF8C2B00912722 /* Sparkle.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				7D1D59370FDFB9AE00EB29CD /* Carbon.framework in Frameworks */,
 				7D8D2FCA0FEDFD3200912722 /* ScriptingBridge.framework in Frameworks */,
 				7DA0A82D0FF0A00D006503FC /* PreferencePanes.framework in Frameworks */,
-				7D1425110FFB504D00708F8B /* BWToolkitFramework.framework in Frameworks */,
 				7D7F9D1810119FEF0059D5DA /* IOKit.framework in Frameworks */,
-				7D7EB7E91054465C00EA517C /* BWToolkitFramework.framework in Frameworks */,
+				983AAA6616A0B92100ADC2FF /* Sparkle.framework in Frameworks */,
+				98542E8216A0DF4900144403 /* BWToolkitFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,10 +161,10 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				98542E8116A0DF4900144403 /* BWToolkitFramework.framework */,
+				983AAA6416A0B92100ADC2FF /* Sparkle.framework */,
 				7D7F9D1710119FEF0059D5DA /* IOKit.framework */,
-				7D1425100FFB504D00708F8B /* BWToolkitFramework.framework */,
 				7DA0A82C0FF0A00D006503FC /* PreferencePanes.framework */,
-				7D8D33560FEF77A800912722 /* Sparkle.framework */,
 				7D1D59360FDFB9AE00EB29CD /* Carbon.framework */,
 				7D8D2FC90FEDFD3200912722 /* ScriptingBridge.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
@@ -332,9 +329,16 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Plexer" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Plexer */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -354,7 +358,6 @@
 				7D1D582C0FDFA0CD00EB29CD /* Plexer_OFF.png in Resources */,
 				7D1D582D0FDFA0CD00EB29CD /* Plexer_ON.png in Resources */,
 				7D8D300D0FEE045300912722 /* System Events.app in Resources */,
-				7D8D321F0FEF48D900912722 /* version.xcconfig in Resources */,
 				7D8D32A90FEF54A000912722 /* dsa_pub.pem in Resources */,
 				7D5DEBB30FF9EB60005AB679 /* MainMenu.xib in Resources */,
 				7D1425640FFB535000708F8B /* release-notes.html in Resources */,
@@ -439,6 +442,7 @@
 		7D8D32AD0FEF565400912722 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -449,9 +453,9 @@
 		7D8D32AE0FEF565400912722 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = Publish;
 				ZERO_LINK = NO;
 			};
@@ -462,16 +466,13 @@
 			baseConfigurationReference = 7D8D321E0FEF48D900912722 /* version.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../Library/Frameworks\"",
-					"\"$(SRCROOT)/../../../Downloads/Sparkle 1/With Garbage Collection\"",
-					"\"$(SRCROOT)/../../../Downloads/Sparkle 1\"",
-					"\"$(SRCROOT)/../../Library/Application Support/Developer/Shared/Xcode/Frameworks\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -479,6 +480,7 @@
 				INFOPLIST_FILE = resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Plexer;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -487,13 +489,11 @@
 			baseConfigurationReference = 7D8D321E0FEF48D900912722 /* version.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../Library/Frameworks\"",
-					"\"$(SRCROOT)/../../../Downloads/Sparkle 1/With Garbage Collection\"",
-					"\"$(SRCROOT)/../../../Downloads/Sparkle 1\"",
-					"\"$(SRCROOT)/../../Library/Application Support/Developer/Shared/Xcode/Frameworks\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -501,6 +501,7 @@
 				INFOPLIST_FILE = resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Plexer;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -514,9 +515,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
@@ -524,15 +524,14 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;

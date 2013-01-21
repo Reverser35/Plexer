@@ -37,8 +37,8 @@ int main(void) {
     printf("Content-Type: text/plain;charset=us-ascii\n\n");
     query = getenv("QUERY_STRING");
     
-    if (query == 0 || strcmp(query, "oUedfe839320dk44iIEDKJFE492") != 0)
-        return 0;
+    //if (query == 0 || strcmp(query, "oUedfe839320dk44iIEDKJFE492") != 0)
+    //    return 0;
     
     // We need to generate positions 0, 5, A, and F.
     srand(time(0));
